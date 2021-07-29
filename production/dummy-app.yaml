@@ -3,8 +3,6 @@ kind: Application
 metadata:
   name: dummy-app
   namespace: argocd
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
 spec:
   project: test
   source:
@@ -13,7 +11,7 @@ spec:
     path: dummy-app
   destination:
     server: https://kubernetes.default.svc
-    namespace: argocd
+    namespace: test
   syncPolicy:
     automated:
       selfHeal: true
