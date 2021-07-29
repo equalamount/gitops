@@ -11,7 +11,7 @@ spec:
     path: argo-workflows
   destination:
     server: https://kubernetes.default.svc
-    namespace: argo-workflows
+    namespace: argo
   syncPolicy:
     automated:
       selfHeal: true
