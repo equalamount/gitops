@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: apps-gitops
+  name: argo-events
   namespace: argocd
 spec:
   project: test
   source:
     repoURL: https://github.com/equalamount/gitops.git
     targetRevision: HEAD
-    path: production
+    path: argo-events
   destination:
     server: https://kubernetes.default.svc
-    namespace: test
+    namespace: argo-events
   syncPolicy:
     automated:
       selfHeal: true
