@@ -4,6 +4,6 @@ metadata:
   name: external-vault
 subsets:
   - addresses:
-      - ip: "https://vault.csi.local"
+      - ip: 10.1.42.14
     ports:
       - port: 8200
