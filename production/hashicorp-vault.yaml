@@ -17,8 +17,5 @@ spec:
           value: "https://vault.csi.local:8200"
   project: "test"
   syncPolicy:
-    automated:
-      selfHeal: true
-      prune: true
     syncOptions:
       - CreateNamespace=true
