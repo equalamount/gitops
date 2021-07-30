@@ -11,7 +11,7 @@ spec:
     path: dummy-app
   destination:
     server: https://kubernetes.default.svc
-    namespace: test
+    namespace: vault
   syncPolicy:
     automated:
       selfHeal: true
