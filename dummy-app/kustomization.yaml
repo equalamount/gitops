@@ -4,4 +4,4 @@ resources:
   - namespace.yaml
   - deployment.yaml
   - svc.yaml
-namespace: test
+namespace: vault
