@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: external-vault
+subsets:
+  - addresses:
+      - ip: "https://vault.csi.local"
+    ports:
+      - port: 8200

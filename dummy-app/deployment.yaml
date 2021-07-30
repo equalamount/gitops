@@ -26,6 +26,6 @@ spec:
             - containerPort: 80
           env:
             - name: VAULT_ADDR
-              value: "https://vault.csi.local:8200"
+              value: "http://external-vault:8200"
             - name: VAULT_TOKEN
               value: root
