@@ -9,8 +9,8 @@ spec:
     repoURL: https://github.com/equalamount/gitops.git
     targetRevision: HEAD
     path: dummy-app
-    plugin:
-      name: argocd-vault-plugin
+    # plugin:
+    #   name: argocd-vault-plugin-kustomize
   destination:
     server: https://kubernetes.default.svc
     namespace: test
@@ -18,3 +18,9 @@ spec:
     automated:
       selfHeal: true
       prune: true
+  data:
+    configManagementPlugins: |
+      - name: argocd-vault-plugin-kustomize
+        generate:
+          command: ["sh", "-c"]
+          args: ["kustomize build . > all.yaml && argocd-vault-plugin generate all.yaml"]
