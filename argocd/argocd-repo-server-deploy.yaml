@@ -7,6 +7,9 @@ spec:
     matchLabels:
       app: argocd-repo-server
   template:
+    metadata:
+      labels:
+        app: argocd-repo-server
     spec:
       containers:
         - name: argocd-repo-server
