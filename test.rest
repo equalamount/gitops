@@ -1,2 +1,0 @@
-GET https://10.1.42.14:8200/v1/internal/data/csi.vault HTTP/1.1
-X-Vault-Token: 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s
