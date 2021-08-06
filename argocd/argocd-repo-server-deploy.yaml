@@ -4,7 +4,8 @@ metadata:
   name: argocd-repo-server
 spec:
   selector:
-    app: argocd-repo-server
+    matchLabels:
+      app: argocd-repo-server
   template:
     spec:
       containers:
