@@ -4,6 +4,7 @@ kind: Kustomization
 resources:
   - vault-github-credentials.yaml
   - https://github.com/argoproj/argo-cd/manifests/cluster-install
+  - ingress.yaml
 
 patchesStrategicMerge:
   - argocd-repo-server-deploy.yaml
