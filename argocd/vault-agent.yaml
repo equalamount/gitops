@@ -1,19 +1,22 @@
+# This is just a NGINX reversy proxy that redirects traffic to external vault VM that is on the same subnet
+# as host of this k8s cluster. This is most probably temporary until I find better solution
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx
+  name: vault-agent
+  namespace: argocd
 spec:
   selector:
     matchLabels:
-      app: nginx
+      app: vault-agent
   template:
     metadata:
       labels:
-        app: nginx
+        app: vault-agent
     spec:
       hostNetwork: true
       containers:
-        - name: nginx
+        - name: vault-agent
           image: nginx
           resources:
             limits:
@@ -28,17 +31,17 @@ spec:
         - name: config
           hostPath:
             # directory location on host
-            path: /home/ciagent/testing/nginx.conf
+            path: ./nginx.conf
             # this field is optional
             type: File
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx
+  name: vault-agent
 spec:
   selector:
-    app: nginx
+    app: vault-agent
   ports:
     - port: 80
       targetPort: 80
