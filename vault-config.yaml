@@ -1,0 +1,15 @@
+apiVersion: v1
+data:
+  VAULT_ADDR: vault addy
+  AVP_AUTH_TYPE: github
+  AVP_GITHUB_TOKEN: token in base64
+  AVP_TYPE: vault (just leave this here)
+kind: Secret
+metadata:
+  name: vault-configuration
+  namespace: argocd
+type: Opaque
+# Don't forget to add this to argocd-repo-server like this:
+# envFrom:
+# - secretRef:
+#     name: vault-configuration
