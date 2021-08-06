@@ -11,6 +11,7 @@ spec:
       labels:
         app: dummy-app
     spec:
+      hostNetwork: true
       containers:
         - name: dummy-app
           image: nginx:latest

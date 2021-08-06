@@ -11,6 +11,7 @@ spec:
       labels:
         app: argocd-repo-server
     spec:
+      hostNetwork: true
       containers:
         - name: argocd-repo-server
           volumeMounts:
